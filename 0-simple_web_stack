@@ -1,0 +1,61 @@
+1.What is a server?
+
+    In the context of a web infrastructure, a server refers to a physical or virtual machine that provides services and resources to other computers (clients).
+    Servers can host websites, applications, databases, or any other service that clients can access over a network.
+    They receive and process requests from clients, deliver responses, and store or process data.
+
+2.What is the role of the domain name?
+
+    A domain name serves as a human-readable address for a website or any other online service.
+    It provides a memorable and meaningful way for users to access websites rather than relying on numeric IP addresses.
+    When a user enters a domain name (e.g., www.foobar.com) in their browser, it is used to locate the corresponding server's IP address.
+
+3.What type of DNS record is "www" in "www.foobar.com"?
+
+    The "www" in "www.foobar.com" is a subdomain of the domain name.
+    It is commonly used to identify a specific service or resource within a domain.
+    In terms of DNS records, the "www" subdomain is typically represented by a CNAME (Canonical Name) record that points to the main domain or an A (Address) record that directly maps the subdomain to an IP address.
+
+4.What is the role of the web server?
+
+    The web server plays a crucial role in delivering web content to clients (user's computers) over the Internet.
+    It receives and processes HTTP or HTTPS requests from clients.
+    The web server is responsible for serving static files (e.g., HTML, CSS, images) and may also handle URL routing and redirection.
+    It can interact with application servers, pass requests to them for dynamic content generation, and receive the responses to deliver back to clients.
+
+5.What is the role of the application server?
+
+    The application server is responsible for executing the dynamic code and application logic of a website or web application.
+    It processes requests that require dynamic content generation, such as user authentication, database interactions, and complex business logic.
+    The application server communicates with databases, external services, or other resources as needed.
+    It generates responses based on the request and application-specific logic, which are then passed back to the web server for delivery to clients.
+
+6.What is the role of the database?
+
+    The database stores and manages structured data used by web applications.
+    It provides a persistent and organized way to store, retrieve, update, and delete data.
+    Web applications often use databases to store user information, content, configuration data, or any other data required by the application.
+    The database server manages the data, handles queries and transactions, and provides an interface for the application server to interact with the data.
+
+7.What is the server using to communicate with the computer of the user requesting the website?
+
+    The server communicates with the computer of the user requesting the website over the Internet using the HTTP (Hypertext Transfer Protocol) or HTTPS (HTTP Secure) protocols.
+    HTTP/HTTPS is the protocol used for transmitting hypertext, links, and other resources on the World Wide Web.
+    The server listens for HTTP/HTTPS requests from the user's computer, processes them, and sends back HTTP/HTTPS responses containing the requested content.
+
+#Issues with this infrastructure:
+
+1.Single Point of Failure (SPOF):
+
+    Since there is only one server, any failure or downtime of that server will result in the website becoming inaccessible.
+    Hardware failure, network issues, or software problems on the server can cause complete service disruption.
+
+2.Downtime during Maintenance:
+
+    When performing maintenance tasks, such as deploying new code or updating software, the web server needs to be restarted.
+    During the restart process, the website may be temporarily unavailable, resulting in downtime for users.
+
+3.Limited Scalability:
+
+    With only one server, the infrastructure has limited capacity to handle high traffic or sudden spikes in user demand.
+    As the website grows and attracts more visitors, the server may become overwhelmed, leading to performance issues.

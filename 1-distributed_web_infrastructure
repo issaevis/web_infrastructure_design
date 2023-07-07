@@ -1,0 +1,58 @@
+1.Load Balancer (HAproxy):
+
+    The load balancer is added to distribute incoming requests across multiple web servers (Nginx) to balance the load and improve performance.
+    It helps avoid overloading a single server and allows for scalability as more servers can be added to handle increased traffic.
+    The load balancer examines factors like server health, current load, and request routing algorithms to determine how to distribute incoming requests.
+
+2.Distribution Algorithm of the Load Balancer:
+
+    The distribution algorithm used in the load balancer (HAproxy) can be Round Robin, Least Connections, or another suitable algorithm.
+    Round Robin distributes requests equally among the available servers in a circular manner.
+    Least Connections assigns new requests to the server with the fewest active connections, thus distributing the load more evenly.
+
+3.Active-Active or Active-Passive Setup of the Load Balancer:
+
+    The load balancer (HAproxy) can be configured in either an Active-Active or Active-Passive setup.
+    Active-Active: In this setup, multiple load balancers are actively processing requests simultaneously. They share the load and provide redundancy, improving performance and high availability.
+    Active-Passive: In this setup, one load balancer is active and actively processing requests, while the other(s) are in standby mode. The standby load balancer takes over only if the active one fails, providing failover capability.
+
+4.Database Primary-Replica (Master-Slave) Cluster:
+
+    The addition of a database Primary-Replica (Master-Slave) cluster is for improved data replication, availability, and fault tolerance.
+    In this setup, the Primary node (Master) is the main database server that accepts write operations and manages data modifications.
+    The Replica node (Slave) is a secondary database server that replicates data from the Primary node and accepts read operations.
+    Any changes made on the Primary node are asynchronously replicated to the Replica node(s), ensuring data consistency and redundancy.
+
+5.Difference between Primary and Replica Nodes in regard to the application:
+
+    The Primary node is responsible for handling write operations, such as creating, updating, or deleting data.
+    The application primarily interacts with the Primary node when it needs to modify data or perform write operations.
+    The Replica node(s) are used for read operations, providing improved read scalability and performance.
+    The application can direct read queries to the Replica node(s) to offload the Primary node and distribute the read workload.
+
+#Issues with the infrastructure
+
+1.Single Point of Failure (SPOF):
+
+    The infrastructure as described has potential single points of failure (SPOF), particularly with a single load balancer.
+    If the load balancer fails, the entire system's availability can be compromised as incoming traffic will not be properly distributed.
+    Similarly, if any individual server (web server, application server, or database server) fails, it can impact the availability of the website.
+
+2.Security Issues:
+
+    a. Lack of Firewall:
+
+        The infrastructure description does not include the mention of a firewall.
+        Firewalls play a crucial role in protecting servers and network infrastructure from unauthorized access and malicious attacks.
+        Without a firewall, the system may be more vulnerable to unauthorized access, data breaches, and other security threats.
+    b. No HTTPS:
+
+        The infrastructure description does not mention the use of HTTPS (HTTP Secure) for secure communication.
+        HTTPS ensures that the data transmitted between the user's computer and the server is encrypted and secure.
+        Without HTTPS, sensitive information transmitted over the network, such as login credentials or personal data, can be intercepted or compromised.
+
+3.Lack of Monitoring:
+
+    The infrastructure description does not include any monitoring components.
+    Monitoring systems play a crucial role in tracking the health, performance, and availability of servers, services, and resources.
+    Without monitoring, it becomes challenging to detect and troubleshoot issues promptly, leading to potential downtime and degraded performance that can impact user experience.

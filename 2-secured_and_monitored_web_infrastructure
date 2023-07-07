@@ -1,0 +1,56 @@
+1.Firewalls:
+
+    Firewalls are added to enhance security in the infrastructure.
+    Firewalls act as a barrier between the servers and external networks, controlling incoming and outgoing network traffic.
+    They monitor and filter network packets, allowing authorized traffic and blocking unauthorized or malicious connections.
+    Firewalls help protect against various threats such as unauthorized access, DDoS attacks, and intrusion attempts.
+
+2.Traffic Served over HTTPS:
+
+    Traffic is served over HTTPS to ensure secure communication between the user's computer and the servers.
+    HTTPS uses encryption to protect sensitive data transmitted over the network, such as login credentials or personal information.
+    It prevents eavesdropping, data tampering, and unauthorized access to user data.
+    By enabling HTTPS, the infrastructure ensures the confidentiality, integrity, and authenticity of data exchanged between the user and the servers.
+
+3.Monitoring:
+
+    Monitoring is used to ensure the health, performance, and availability of the servers and infrastructure components.
+    It helps identify and address issues proactively, minimizing downtime and optimizing performance.
+    Monitoring provides insights into resource utilization, system metrics, application performance, and user experience.
+    It helps detect anomalies, troubleshoot problems, and ensure that the infrastructure is operating within defined performance thresholds.
+
+4.Data Collection by Monitoring Tools:
+
+    Monitoring tools collect data from servers and infrastructure components through various methods:
+    Agent-based monitoring: Agents are installed on the servers to collect and transmit data to the monitoring tool.
+    API-based monitoring: Monitoring tools interact with server APIs to retrieve metrics and data.
+    Log-based monitoring: Log files from servers are parsed and analyzed to extract relevant information.
+    The collected data includes metrics such as CPU usage, memory utilization, network traffic, response times, error rates, and more.
+    Monitoring tools store and analyze the collected data, generate reports, and trigger alerts based on predefined thresholds.
+
+5.Monitoring Web Server QPS:
+
+    To monitor the web server's QPS (Queries Per Second), you can use monitoring tools that provide metrics specific to web server performance.
+    Configure the monitoring tool to collect request and response data from the web server.
+    Monitor metrics such as request count, response time, and error rate.
+    Set up alerts or notifications based on predefined thresholds for QPS to get notified of any anomalies or performance issues.
+
+#Issues with the infrastructure:
+
+1.Terminating SSL at the Load Balancer Level:
+
+    Terminating SSL at the load balancer level means decrypting SSL traffic at the load balancer before forwarding it to the servers.
+    This can be an issue if there is sensitive data transmitted between the load balancer and the servers.
+    It introduces an additional security risk, as the decrypted traffic within the infrastructure is susceptible to potential attacks or interception.
+
+2.Having Only One MySQL Server Capable of Accepting Writes:
+
+    Having only one MySQL server capable of accepting writes creates a single point of failure.
+    If the MySQL server fails, write operations cannot be performed, impacting data updates and modifications.
+    It also limits scalability, as a single server may not handle high write loads or accommodate future growth.
+
+3.Servers with All the Same Components (Database, Web Server, and Application Server):
+
+    Having servers with all the same components can lead to resource constraints and inefficient resource allocation.
+    If resource demands vary between components, it becomes challenging to optimize resource allocation and scale resources independently.
+    It can limit flexibility in scaling different components based on their specific requirements and workload patterns.
